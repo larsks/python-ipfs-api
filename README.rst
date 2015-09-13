@@ -1,3 +1,9 @@
+.. image:: https://img.shields.io/pypi/v/ipfs-api.svg?style=flat-square
+
+.. image:: https://img.shields.io/travis/ipfs/python-ipfs-api.svg?style=flat-square
+    :target: https://travis-ci.org/ipfs/python-ipfs-api
+
+
 IPFS API Bindings for Python
 ============================
 
@@ -80,4 +86,26 @@ This module also contains some helper functions for adding strings, json, and ev
     >>> api.get_pyobj(_)
     [1, 77, 'lol']
 
-More to come soon...
+
+How to Contribute
+-----------------
+
+Join us on IRC at #ipfs_ on chat.freenode.net if you have any suggestions or questions, or if you just want to discuss IPFS and python.
+
+Before making any commits, make sure to install the dependencies listed in ``requirements.txt`` and ``test-requirements.txt``, and also install the PEP8 lint tool as a git commit hook::
+    
+    $ pip install -r requirements.txt
+    $ pip install -r test-requirements.txt
+    $ ./tools/pre-commit --install
+
+You can also manually run the pep8 lint tool whenever you want::
+
+    $ tox -e pep8
+
+As you make changes, make sure to run unit tests::
+
+    $ tox
+
+*Note:* This will run unit tests against the python versions defined in ``tox.ini``.  If you don't have one of these python versions installed, it will raise an error for that version only but still run tests for the rest of the versions.
+
+.. _#ipfs: irc://chat.freenode.net/%23ipfs
